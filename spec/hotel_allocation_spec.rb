@@ -11,5 +11,10 @@ RSpec.describe 'it works' do
       customers = [[1,1], [1,1]]
       expect(allocate_rooms(customers)).to eq [1,2]
     end
+
+    it 'handles n customers' do
+      customers = [[1,1], [1,1], [1,1]]
+      expect(allocate_rooms(customers)).to eq [1,2,3]
+    end
   end
 end

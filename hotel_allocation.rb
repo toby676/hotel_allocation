@@ -1,5 +1,11 @@
 def allocate_rooms(customers)
-  (0..customers.length - 1).each_with_object([]) do |customer, arr|
-    arr << customer + 1
+  customers.each_with_object([]) do |customer, arr|
+    hotel_room = 1
+
+    until !arr.include? hotel_room
+      hotel_room += 1
+    end
+
+    arr << hotel_room
   end
 end
