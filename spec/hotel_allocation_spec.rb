@@ -26,5 +26,10 @@ RSpec.describe 'it works' do
       customers = [[1,2], [3,4], [1,4]]
       expect(allocate_rooms(customers)).to eq [1,1,2]
     end
+
+    it 'multi night with same start days' do
+      customers = [[1,2], [3,4], [2,2]]
+      expect(allocate_rooms(customers)).to eq [1,1,2]
+    end
   end
 end
