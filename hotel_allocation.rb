@@ -8,7 +8,7 @@ def allocate_rooms(customers)
     p "room #{hotel_room} storage: #{room_storage[hotel_room]}"
     p "nights in room #{customer_nights_spent_in_room}"
 
-    until !room_storage[hotel_room].intersect?(customer_nights_spent_in_room)
+    until room_storage[hotel_room].intersection(customer_nights_spent_in_room).empty?
       hotel_room += 1
       p "room #{hotel_room} storage: #{room_storage[hotel_room]}"
       p "nights in room #{customer_nights_spent_in_room}"
