@@ -4,13 +4,13 @@ def allocate_rooms(customers)
   customers.each_with_object([]) do |customer, arr|
     hotel_room = 1
     check_in, check_out = customer
+    nights = (check_in..check_out).to_a
 
-    customer_nights_spent_in_room = (check_in..check_out).to_a
-    until !room_storage[hotel_room].any? { |night| customer_nights_spent_in_room.include?(night) }
+    until !room_storage[hotel_room].any? { |night| nights.include?(night) }
       hotel_room += 1
     end
 
-    room_storage[hotel_room] += customer_nights_spent_in_room
+    room_storage[hotel_room] += nights
     arr << hotel_room
   end
 end
